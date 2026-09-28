@@ -225,31 +225,45 @@ html,
 }
 
 .cardBox,
+.cardBox.visualCardBox,
 .itemDetailImage {
     border-radius: var(--radius-ui);
     background: var(--color-surface-500);
     box-shadow: none;
 }
 
-.cardText.cardTextCentered.cardText-first {
+.cardBox:has(.cardText-first) {
+    overflow: hidden;
+}
+
+.cardFooter:has(.cardText-first) {
+    background: transparent;
+    padding: 0;
+}
+
+.cardText.cardTextCentered.cardText-first,
+.cardText.cardTextCentered.cardText-secondary {
     background: var(--color-glass);
-    border-top: 1px solid var(--color-glass-border);
-    box-shadow: var(--acrylic-inset);
-    padding: 0.4em 0.55em;
+    border: 0;
+    box-shadow: none;
+    padding: 0.35em 0.55em;
     -webkit-backdrop-filter: var(--acrylic-backdrop);
     backdrop-filter: var(--acrylic-backdrop);
 }
 
-.cardBox:has(> .cardFooter > .cardText-first) {
-    overflow: hidden;
+.cardText.cardTextCentered.cardText-first {
+    border-top: 1px solid var(--color-glass-border);
+    box-shadow: var(--acrylic-inset);
 }
 
-.cardBox:has(> .cardFooter > .cardText-first) .cardScalable,
-.cardBox:has(> .cardFooter > .cardText-first) .cardScalable .cardImageContainer,
-.cardBox:has(> .cardFooter > .cardText-first) .cardScalable .cardContent,
-.cardBox:has(> .cardFooter > .cardText-first) .cardScalable .blurhash-canvas {
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+.cardBox:has(.cardText-first) .cardScalable,
+.cardBox:has(.cardText-first) .cardImageContainer,
+.cardBox:has(.cardText-first) .cardContent,
+.cardBox:has(.cardText-first) .cardPadder,
+.cardBox:has(.cardText-first) .blurhash-canvas,
+.cardBox:has(.cardText-first) .cardOverlayContainer {
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
 }
 
 .listItem {
@@ -340,6 +354,11 @@ progress::-moz-progress-bar {
     color: var(--color-accent) !important;
 }
 
+.MuiAvatar-root.MuiAvatar-circular.MuiAvatar-colorDefault {
+    background-color: var(--color-accent) !important;
+    color: var(--color-foreground) !important;
+}
+
 .MuiAppBar-root.MuiAppBar-colorDefault {
     --Paper-overlay: none !important;
     background-color: var(--color-glass) !important;
@@ -392,7 +411,7 @@ progress::-moz-progress-bar {
 }
 
 .sectionTitleTextButton > .material-icons {
-    transform: translateY(0.5em);
+    transform: translateY(0.25em);
 }
 
 .sectionTitleTextButton:hover,
