@@ -5,8 +5,8 @@
  * Geist for interface text, Geist Mono for code.
  *
  * Paste this file into Dashboard > Branding > Custom CSS.
- * Once the GitHub repo exists, replace that paste with:
- * @import url("https://cdn.jsdelivr.net/gh/USER/REPO@main/theme.css");
+ * Or, once this file is on GitHub, use only:
+ * @import url("https://cdn.jsdelivr.net/gh/iShark5060/Jellyfin-Acrylic@main/theme.css");
  */
 
 @import url("https://cdn.jsdelivr.net/npm/@fontsource-variable/geist/wght.css");
