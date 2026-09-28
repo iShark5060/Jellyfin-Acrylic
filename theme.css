@@ -234,6 +234,10 @@ html,
 
 .cardBox:has(.cardText-first) {
     overflow: hidden;
+    background: var(--color-glass);
+    box-shadow: var(--acrylic-inset);
+    -webkit-backdrop-filter: var(--acrylic-backdrop);
+    backdrop-filter: var(--acrylic-backdrop);
 }
 
 .cardFooter:has(.cardText-first) {
@@ -243,17 +247,16 @@ html,
 
 .cardText.cardTextCentered.cardText-first,
 .cardText.cardTextCentered.cardText-secondary {
-    background: var(--color-glass);
+    background: transparent;
     border: 0;
     box-shadow: none;
     padding: 0.35em 0.55em;
-    -webkit-backdrop-filter: var(--acrylic-backdrop);
-    backdrop-filter: var(--acrylic-backdrop);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 }
 
 .cardText.cardTextCentered.cardText-first {
     border-top: 1px solid var(--color-glass-border);
-    box-shadow: var(--acrylic-inset);
 }
 
 .cardBox:has(.cardText-first) .cardScalable,
