@@ -341,3 +341,29 @@ progress::-moz-progress-bar {
 #app-user-menu .MuiDivider-root {
     border-color: var(--color-glass-divider);
 }
+
+.sectionTitleTextButton,
+.sectionTitleContainer .emby-button {
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 0;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+.sectionTitleTextButton:hover,
+.sectionTitleContainer .emby-button:hover {
+    background: transparent !important;
+    border-color: transparent !important;
+    color: var(--color-foreground);
+}
+
+.sectionTitleTextButton .sectionTitle,
+.sectionTitleTextButton .MuiTypography-root {
+    margin: 0 !important;
+    padding: 0 !important;
+}
