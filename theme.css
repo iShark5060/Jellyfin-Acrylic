@@ -319,31 +319,46 @@ progress::-moz-progress-bar {
     color: var(--color-accent) !important;
 }
 
-.MuiPopover-paper:has(#app-user-menu) {
-    background: var(--color-glass) !important;
+.MuiAppBar-root.MuiAppBar-colorDefault {
+    --Paper-overlay: none !important;
+    background-color: var(--color-glass) !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--color-glass-border);
+    -webkit-backdrop-filter: var(--acrylic-backdrop) !important;
+    backdrop-filter: var(--acrylic-backdrop) !important;
+}
+
+.MuiMenu-paper {
+    --Paper-overlay: none !important;
+    --Paper-shadow: none !important;
+    background-color: var(--color-glass) !important;
+    background-image: none !important;
     color: var(--color-foreground);
     border: 1px solid var(--color-glass-border);
     border-radius: var(--radius-ui) !important;
     box-shadow: var(--acrylic-inset), var(--shadow-panel) !important;
-    -webkit-backdrop-filter: var(--acrylic-backdrop);
-    backdrop-filter: var(--acrylic-backdrop);
+    -webkit-backdrop-filter: var(--acrylic-backdrop) !important;
+    backdrop-filter: var(--acrylic-backdrop) !important;
 }
 
-#app-user-menu .MuiMenuItem-root {
+.MuiMenu-paper .MuiMenuItem-root {
     color: var(--color-foreground);
     border-radius: var(--radius-ui-sm);
 }
 
-#app-user-menu .MuiMenuItem-root:hover {
+.MuiMenu-paper .MuiMenuItem-root:hover {
     background: var(--color-glass-hover);
 }
 
-#app-user-menu .MuiDivider-root {
+.MuiMenu-paper .MuiDivider-root {
     border-color: var(--color-glass-divider);
 }
 
 .sectionTitleTextButton,
 .sectionTitleContainer .emby-button {
+    display: inline-flex !important;
+    align-items: center !important;
     background: transparent !important;
     border: 0 !important;
     border-radius: 0 !important;
@@ -353,6 +368,12 @@ progress::-moz-progress-bar {
     min-height: 0;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
+}
+
+.sectionTitleTextButton > .MuiSvgIcon-root,
+.sectionTitleTextButton > svg {
+    padding-top: 0 !important;
+    margin-top: 0.12em;
 }
 
 .sectionTitleTextButton:hover,
