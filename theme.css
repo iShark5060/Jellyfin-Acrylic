@@ -228,7 +228,7 @@ html,
 .cardBox.visualCardBox,
 .itemDetailImage {
     border-radius: var(--radius-ui);
-    background: var(--color-surface-500);
+    background: transparent;
     box-shadow: none;
 }
 
