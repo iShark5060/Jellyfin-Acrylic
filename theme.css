@@ -1,7 +1,7 @@
 /*
  * Acrylic for Jellyfin
  *
- * Dark Acrylic from AppBase: violet accent, frosted chrome, 8px corners.
+ * Dark Acrylic from Dark Avian Labs: violet accent, frosted chrome, 8px corners.
  * Geist for interface text, Geist Mono for code.
  *
  * Paste this file into Dashboard > Branding > Custom CSS.
@@ -267,4 +267,77 @@ progress::-moz-progress-bar {
 
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(255 255 255 / 0.15);
+}
+
+.sliderBubble {
+    background: var(--color-glass);
+    color: var(--color-foreground);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-ui-sm);
+    box-shadow: var(--acrylic-inset), var(--shadow-panel);
+    -webkit-backdrop-filter: var(--acrylic-backdrop);
+    backdrop-filter: var(--acrylic-backdrop);
+}
+
+.skinHeader-withBackground.osdHeader {
+    background: var(--color-glass) !important;
+    border-bottom: 1px solid var(--color-glass-border);
+    box-shadow: var(--acrylic-inset);
+    -webkit-backdrop-filter: var(--acrylic-backdrop) !important;
+    backdrop-filter: var(--acrylic-backdrop) !important;
+}
+
+[data-type="Audio"] .cardImageContainer.defaultCardBackground,
+[data-type="MusicAlbum"] .cardImageContainer.defaultCardBackground,
+[data-type="MusicArtist"] .cardImageContainer.defaultCardBackground,
+[data-type="MusicGenre"] .cardImageContainer.defaultCardBackground,
+[data-type="AudioBook"] .cardImageContainer.defaultCardBackground,
+[data-type="MusicVideo"] .cardImageContainer.defaultCardBackground {
+    background-color: #000;
+}
+
+[data-type="Audio"] .cardImageIcon,
+[data-type="MusicAlbum"] .cardImageIcon,
+[data-type="MusicArtist"] .cardImageIcon,
+[data-type="MusicGenre"] .cardImageIcon,
+[data-type="AudioBook"] .cardImageIcon,
+[data-type="MusicVideo"] .cardImageIcon {
+    color: var(--color-foreground);
+}
+
+.card-hoverable:hover .cardOverlayFab-primary,
+.card-hoverable:focus-within .cardOverlayFab-primary,
+.cardOverlayFab-primary:hover {
+    background-color: var(--color-accent) !important;
+    color: var(--color-foreground) !important;
+}
+
+.cardOverlayButton-br .cardOverlayButton:hover,
+.cardOverlayButton-br .cardOverlayButton:hover .material-icons,
+.ratingbutton-icon-withrating,
+.playstatebutton-icon-played {
+    color: var(--color-accent) !important;
+}
+
+.MuiPopover-paper:has(#app-user-menu) {
+    background: var(--color-glass) !important;
+    color: var(--color-foreground);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-ui) !important;
+    box-shadow: var(--acrylic-inset), var(--shadow-panel) !important;
+    -webkit-backdrop-filter: var(--acrylic-backdrop);
+    backdrop-filter: var(--acrylic-backdrop);
+}
+
+#app-user-menu .MuiMenuItem-root {
+    color: var(--color-foreground);
+    border-radius: var(--radius-ui-sm);
+}
+
+#app-user-menu .MuiMenuItem-root:hover {
+    background: var(--color-glass-hover);
+}
+
+#app-user-menu .MuiDivider-root {
+    border-color: var(--color-glass-divider);
 }
