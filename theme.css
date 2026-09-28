@@ -124,15 +124,30 @@ html,
     .formDialog,
     .dialog,
     .actionSheet,
-    #loginPage .padded-left.padded-right.padded-bottom-page {
+    #loginPage .padded-left.padded-right.padded-bottom-page,
+    .detailRibbon.padded-left.padded-right {
         background: var(--acrylic-fallback);
         -webkit-backdrop-filter: none;
         backdrop-filter: none;
+    }
+
+    .alphaPicker-fixed-right > .MuiPaper-root {
+        background-color: var(--acrylic-fallback) !important;
+        background-image: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
     }
 }
 
 .skinHeader {
     border-bottom: 1px solid var(--color-glass-border);
+}
+
+.detailRibbon.padded-left.padded-right {
+    background: var(--color-glass);
+    box-shadow: var(--acrylic-inset);
+    -webkit-backdrop-filter: var(--acrylic-backdrop);
+    backdrop-filter: var(--acrylic-backdrop);
 }
 
 .mainDrawer {
@@ -185,6 +200,10 @@ html,
 #loginPage .emby-button:hover {
     border-color: var(--color-glass-border-hover);
     color: var(--color-accent);
+}
+
+.button-link.emby-button {
+    padding: 0.25em 0.7em;
 }
 
 .fab,
@@ -343,12 +362,12 @@ progress::-moz-progress-bar {
     backdrop-filter: var(--acrylic-backdrop) !important;
 }
 
-[data-type="Audio"] .cardImageContainer.defaultCardBackground,
-[data-type="MusicAlbum"] .cardImageContainer.defaultCardBackground,
-[data-type="MusicArtist"] .cardImageContainer.defaultCardBackground,
-[data-type="MusicGenre"] .cardImageContainer.defaultCardBackground,
-[data-type="AudioBook"] .cardImageContainer.defaultCardBackground,
-[data-type="MusicVideo"] .cardImageContainer.defaultCardBackground {
+[data-type="Audio"] .defaultCardBackground,
+[data-type="MusicAlbum"] .defaultCardBackground,
+[data-type="MusicArtist"] .defaultCardBackground,
+[data-type="MusicGenre"] .defaultCardBackground,
+[data-type="AudioBook"] .defaultCardBackground,
+[data-type="MusicVideo"] .defaultCardBackground {
     background-color: #000;
 }
 
@@ -414,6 +433,19 @@ progress::-moz-progress-bar {
 
 .MuiMenu-paper .MuiDivider-root {
     border-color: var(--color-glass-divider);
+}
+
+.alphaPicker-fixed-right > .MuiPaper-root {
+    --Paper-overlay: none !important;
+    --Paper-shadow: none !important;
+    background-color: var(--color-glass) !important;
+    background-image: none !important;
+    color: var(--color-foreground);
+    border: 1px solid var(--color-glass-border);
+    border-radius: var(--radius-ui) !important;
+    box-shadow: var(--acrylic-inset) !important;
+    -webkit-backdrop-filter: var(--acrylic-backdrop) !important;
+    backdrop-filter: var(--acrylic-backdrop) !important;
 }
 
 .sectionTitleTextButton,
