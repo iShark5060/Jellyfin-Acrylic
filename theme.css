@@ -231,6 +231,27 @@ html,
     box-shadow: none;
 }
 
+.cardText.cardTextCentered.cardText-first {
+    background: var(--color-glass);
+    border-top: 1px solid var(--color-glass-border);
+    box-shadow: var(--acrylic-inset);
+    padding: 0.4em 0.55em;
+    -webkit-backdrop-filter: var(--acrylic-backdrop);
+    backdrop-filter: var(--acrylic-backdrop);
+}
+
+.cardBox:has(> .cardFooter > .cardText-first) {
+    overflow: hidden;
+}
+
+.cardBox:has(> .cardFooter > .cardText-first) .cardScalable,
+.cardBox:has(> .cardFooter > .cardText-first) .cardScalable .cardImageContainer,
+.cardBox:has(> .cardFooter > .cardText-first) .cardScalable .cardContent,
+.cardBox:has(> .cardFooter > .cardText-first) .cardScalable .blurhash-canvas {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
 .listItem {
     border-radius: var(--radius-ui-sm);
 }
@@ -370,10 +391,8 @@ progress::-moz-progress-bar {
     backdrop-filter: none !important;
 }
 
-.sectionTitleTextButton > .MuiSvgIcon-root,
-.sectionTitleTextButton > svg {
-    padding-top: 0 !important;
-    margin-top: 0.12em;
+.sectionTitleTextButton > .material-icons {
+    transform: translateY(0.5em);
 }
 
 .sectionTitleTextButton:hover,
