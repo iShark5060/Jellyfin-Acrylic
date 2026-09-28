@@ -131,7 +131,8 @@ html,
         backdrop-filter: none;
     }
 
-    .alphaPicker-fixed-right > .MuiPaper-root {
+    .alphaPicker-fixed-right > .MuiPaper-root,
+    .dialog.actionSheet {
         background-color: var(--acrylic-fallback) !important;
         background-image: none !important;
         -webkit-backdrop-filter: none !important;
@@ -182,6 +183,26 @@ html,
 #loginPage .emby-input:focus {
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent) 25%, transparent);
+}
+
+/* Desktop uses the OS select popup. color-scheme is the only styling it accepts. */
+select,
+.emby-select,
+select option,
+.emby-select option {
+    color-scheme: dark;
+}
+
+select option,
+.emby-select option {
+    background-color: #1c1c1e;
+    color: var(--color-foreground);
+}
+
+select option:checked,
+.emby-select option:checked {
+    background-color: var(--color-accent);
+    color: var(--color-foreground);
 }
 
 .emby-button,
@@ -409,7 +430,8 @@ progress::-moz-progress-bar {
     backdrop-filter: var(--acrylic-backdrop) !important;
 }
 
-.MuiMenu-paper {
+.MuiMenu-paper,
+.dialog.actionSheet {
     --Paper-overlay: none !important;
     --Paper-shadow: none !important;
     background-color: var(--color-glass) !important;
@@ -422,12 +444,26 @@ progress::-moz-progress-bar {
     backdrop-filter: var(--acrylic-backdrop) !important;
 }
 
-.MuiMenu-paper .MuiMenuItem-root {
-    color: var(--color-foreground);
-    border-radius: var(--radius-ui-sm);
+/* contain:strict on the dialog shell stops backdrop-filter from seeing the video */
+.dialogContainer:has(.actionSheet) {
+    contain: none;
+    overflow: visible;
 }
 
-.MuiMenu-paper .MuiMenuItem-root:hover {
+.MuiMenu-paper .MuiMenuItem-root,
+.dialog.actionSheet .actionSheetMenuItem {
+    color: var(--color-foreground);
+    background: transparent;
+    border: 0;
+    border-radius: var(--radius-ui-sm);
+    box-shadow: none;
+    margin: 2px 6px;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.MuiMenu-paper .MuiMenuItem-root:hover,
+.dialog.actionSheet .actionSheetMenuItem:hover {
     background: var(--color-glass-hover);
 }
 
