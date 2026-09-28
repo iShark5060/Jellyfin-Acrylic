@@ -58,6 +58,13 @@
     --acrylic-inset: inset 0 0.5px 0 rgb(255 255 255 / 0.14);
     --acrylic-fallback: #2c2c2c;
     --shadow-panel: 0 2px 4px rgb(0 0 0 / 0.12), 0 12px 28px rgb(0 0 0 / 0.28), 0 32px 80px rgb(0 0 0 / 0.38);
+
+    --jf-palette-primary-main: var(--color-accent);
+    --jf-palette-primary-light: var(--color-primary-300);
+    --jf-palette-primary-dark: var(--color-primary-500);
+    --jf-palette-primary-mainChannel: 94 83 252;
+    --jf-palette-secondary-main: var(--color-accent);
+    --jf-palette-secondary-mainChannel: 94 83 252;
 }
 
 html {
@@ -279,8 +286,19 @@ html,
 
 .itemProgressBarForeground,
 .playbackProgress > div,
-.mdl-slider-background-lower {
-    background: var(--color-accent);
+.mdl-slider-background-lower,
+.sliderMarker.watched {
+    background-color: var(--color-accent) !important;
+}
+
+.mdl-slider {
+    color: var(--color-accent) !important;
+}
+
+.mdl-slider::-webkit-slider-thumb,
+.mdl-slider::-moz-range-thumb,
+.mdl-slider::-ms-thumb {
+    background: var(--color-accent) !important;
 }
 
 .taskProgressInner,
