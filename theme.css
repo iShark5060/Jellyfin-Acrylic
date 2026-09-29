@@ -185,24 +185,47 @@ html,
     box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-accent) 25%, transparent);
 }
 
-/* Desktop uses the OS select popup. color-scheme is the only styling it accepts. */
+/* Opt into the styleable picker. The Windows popup ignores option colors otherwise. */
 select,
 .emby-select,
-select option,
-.emby-select option {
+select::picker(select),
+.emby-select::picker(select) {
+    appearance: base-select !important;
     color-scheme: dark;
+}
+
+select::picker-icon,
+.emby-select::picker-icon {
+    display: none;
+}
+
+select::picker(select),
+.emby-select::picker(select) {
+    background-color: #3b3b3b;
+    color: white;
+    border: 1px solid rgb(255 255 255 / 0.16);
+    border-radius: 8px;
+    padding: 4px;
 }
 
 select option,
 .emby-select option {
-    background-color: #1c1c1e;
-    color: var(--color-foreground);
+    color: white !important;
+    background-color: #3b3b3b !important;
+}
+
+select option:hover,
+select option:focus,
+.emby-select option:hover,
+.emby-select option:focus {
+    background-color: #4a4a4a !important;
+    color: white !important;
 }
 
 select option:checked,
 .emby-select option:checked {
-    background-color: var(--color-accent);
-    color: var(--color-foreground);
+    background-color: #5a5a5a !important;
+    color: white !important;
 }
 
 .emby-button,
@@ -457,9 +480,44 @@ progress::-moz-progress-bar {
     border: 0;
     border-radius: var(--radius-ui-sm);
     box-shadow: none;
-    margin: 2px 6px;
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
+}
+
+.MuiMenu-paper .MuiMenuItem-root {
+    margin: 2px 6px;
+}
+
+.dialog.actionSheet .actionSheetMenuItem {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0.5em 1em;
+    line-height: 1.2;
+}
+
+.dialog.actionSheet .actionsheetListItemBody {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    padding: 0 !important;
+}
+
+.dialog.actionSheet .actionSheetItemText {
+    flex: 1;
+    min-width: 0;
+}
+
+[dir="ltr"] .dialog.actionSheet .actionSheetItemAsideText {
+    margin-left: 1.5em;
+    margin-right: 0;
+}
+
+[dir="rtl"] .dialog.actionSheet .actionSheetItemAsideText {
+    margin-right: 1.5em;
+    margin-left: 0;
 }
 
 .MuiMenu-paper .MuiMenuItem-root:hover,
