@@ -491,23 +491,29 @@ progress::-moz-progress-bar {
 .dialog.actionSheet .actionSheetMenuItem {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     width: 100%;
     margin: 0;
     padding: 0.5em 1em;
     line-height: 1.2;
+    text-align: start;
 }
 
 .dialog.actionSheet .actionsheetListItemBody {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
     flex: 1;
     width: 100%;
     padding: 0 !important;
+    text-align: start;
 }
 
 .dialog.actionSheet .actionSheetItemText {
     flex: 1;
+    justify-content: flex-start;
     min-width: 0;
+    text-align: start;
 }
 
 [dir="ltr"] .dialog.actionSheet .actionSheetItemAsideText {
